@@ -56,7 +56,7 @@ li {
   margin: 0 auto;
   max-width: 1260px;
 
-  @media only screen and (max-width: 1300px) {
+  @media screen and (max-width: 1300px) {
     width: 100%;
     box-sizing: border-box;
     padding-left: 20px;
@@ -72,15 +72,15 @@ li {
   height: 900px;
   position: relative;
 
-  @media only screen and (max-width: 1000px) {
+  @media screen and (max-width: 1000px) {
     background-image: none;
     height: auto;
     padding-top: 0;
   }
 }
 
-/* ----------------------------------- Header ----------------------------------- */
 
+/* ----------------------------------- Header ----------------------------------- */
 .header {
   color: @buttons;
   font-size: 17px;
@@ -98,37 +98,29 @@ li {
     display: flex;
 
     &-logo img {
+      margin-right: 60px;
 
-      @media only screen and (max-width: 500px) {width: 180px;}
+      @media screen and (max-width: 500px) {
+        width: 180px;
+        margin-right: 0;
+      }
     } 
 
     ul {
       display: flex;
-      margin-left: 60px;
 
-      & > li {
-        margin-left: 40px;
-        margin-right: 40px;
-
-        @media only screen and (max-width: 1300px) {
-          margin-left: 15px;
-          margin-right: 15px;
-        }
-
-        a {
+      & > li a {
           color: @buttons;
           transition: color 0.3s ease;
           &:hover {color: @hover;}
             }
-          }
-        }
+          
+      li + li {margin-left: 80px;}
     
-    @media only screen and (max-width: 1000px) {
-      
-      ul {display: none;}
+    @media screen and (max-width: 1000px) {display: none;}
     }
   }
-    
+
   &-right {
     align-items: center;
     display: flex;  
@@ -136,7 +128,7 @@ li {
     &-tel {
       margin-right: 50px;
 
-      @media only screen and (max-width: 1300px) {display: none;}
+      @media screen and (max-width: 1300px) {display: none;}
     }
 
     &-form a {
@@ -145,7 +137,7 @@ li {
       &:hover {color: @hover;}
       }
 
-    @media only screen and (max-width: 1000px) {display: none;}
+    @media screen and (max-width: 1000px) {display: none;}
     }
     
   &-mobile {
@@ -155,7 +147,7 @@ li {
 
     .header-mobile-mail a {
 
-      @media only screen and (max-width: 500px) {margin-right: 15px;}
+      @media screen and (max-width: 500px) {margin-right: 15px;}
     }
 
     &-menu {
@@ -169,13 +161,13 @@ li {
       width: 40px;
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media screen and (max-width: 1000px) {
       display: flex;
       align-items: center;
     }
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media screen and (max-width: 1000px) {
     background-image: url(../images/fullscreen.jpg);
     background-position: center;
     background-size: cover;
@@ -184,8 +176,8 @@ li {
   }
 }
 
-/* ----------------------------------- Текст и меню верхнего блока ----------------------------------- */
 
+/* ----------------------------------- Текст и меню верхнего блока ----------------------------------- */
 .fullscreen-block {
   background-color: rgba(255, 255, 255, 0.5);
   bottom: 0;
@@ -194,9 +186,13 @@ li {
   width: 100%;
 
   &-text {
+    box-sizing: border-box;
+    padding-top: 50px;
+    padding-bottom: 60px;
     margin-left: 130px;
-    
-    @media only screen and (max-width: 1300px) {margin-left: 0;}
+
+    @media screen and (max-width: 1300px) {margin-left: 0;}
+    @media screen and (max-width: 1300px) {padding-top: 40;}
   }
 
     h1 { 
@@ -206,8 +202,6 @@ li {
       font-weight: 300;
       line-height: 78px;
       margin-bottom: 30px;
-      margin-top: 50px;
-      width: 700px;
     }
 
     p {
@@ -215,8 +209,7 @@ li {
       font-family: "Myriad", 'Arial', sans-serif;
       font-size: 27px;
       line-height: 35px;
-      margin-bottom: 60px;
-      width: 600px;
+      width: 60%;
     }
 
   ul {
@@ -245,7 +238,7 @@ li {
         justify-content: center;
         text-align: center;
         text-decoration: none;
-        transition: 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease;
         width: 100%;
 
         &:hover {
@@ -263,7 +256,7 @@ li {
     margin-bottom: 32px;
   }
 
-  @media only screen and (max-width: 1000px) {
+  @media screen and (max-width: 1000px) {
     background-color: #fff;
     position: static;
 
@@ -273,7 +266,6 @@ li {
         font-size: 55px;
         line-height: 55px;   
         margin-bottom: 20px;
-        margin-top: 30px;
         width: 86%;
         }
 
@@ -291,44 +283,39 @@ li {
   }
 }
 
-/* ----------------------------------- Слайдер ----------------------------------- */
 
+/* ----------------------------------- Слайдер ----------------------------------- */
 .gallery {
   width: 1260px;
   margin: 0 auto;
   padding-top: 60px;
 
-  @media only screen and (max-width: 1300px) {width: 100%;}
-  @media only screen and (max-width: 1000px) {padding-top: 0;}
+  @media screen and (max-width: 1300px) {width: 100%;}
+  @media screen and (max-width: 1000px) {padding-top: 0;}
 
   .gallery-item {
     box-sizing: border-box;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
     background-size: cover;
     background-position: 50% 50%;
     padding-top: 55px;
     padding-bottom: 50px;
+    padding-left: 130px;
+    margin-bottom: 65px;
 
-    @media only screen and (max-width: 760px) {
+    @media screen and (max-width: 1300px) {padding-left: 0;}
+    @media screen and (max-width: 1000px) {
       background-position: 90% 100%;
       margin-bottom: 40px;
     }
-    
-    .gallery-item-wrapper {
-      max-width: 1000px;
-      margin-bottom: 0;
-      margin: 0 auto;
-      padding-left: 20px;
-      padding-right: 20px;
-      padding-top: 0;
 
-      @media only screen and (max-width: 1300px) {
-        margin: 0;
-      }
-
-      .gallery-item-wrapper-heading {
+    &-heading {
         display: inline-block;
         font-size: 65px;
         font-family: "Bulletin", 'Arial', sans-serif;
+        font-weight: 400;
         line-height: 52px;
         border-bottom: 1px solid fadeout(@buttons, 30%);
         z-index: 12;
@@ -336,7 +323,7 @@ li {
         transition: 0.3s ease;
         &:hover {border-bottom: 1px solid fadeout(@hover, 30%);}
 
-        @media only screen and (max-width: 1000px) {
+        @media screen and (max-width: 1000px) {
           font-size: 40px;
           line-height: 40px;
         }
@@ -350,50 +337,44 @@ li {
         }
       }
 
-      .gallery-item-wrapper-text {
-        width: 70%;
-        margin-bottom: 150px;
+    &-text {
+      width: 70%;
+      margin-bottom: 150px;
 
-        @media only screen and (max-width: 1000px) {width: 100%;}
+      @media screen and (max-width: 1000px) {
+        width: 100%;
+        margin-bottom: 120px;}
+      @media screen and (max-width: 500px) {margin-bottom: 70px;}
       }
 
-      .gallery-item-wrapper-button {
-        width: 240px;
-        text-align: center;
-        border: 1px solid #fff;
-        font-size: 19px;
-        font-family: "Centro", 'Arial', sans-serif;
-        font-weight: 700;
-        color: @buttons;
-        transition: 0.3s ease;
-       
-        a {
-          display: block;
-          height: 100%;
-          outline: none;
-          text-decoration: none;
-          color: @buttons;
-          padding-bottom: 10px;
-          padding-top: 10px;
-          transition: color 0.3s ease;
-        }
+    &-button {
+      display: inline-block;
+      text-align: center;
+      border: 1px solid #fff;
+      font-size: 19px;
+      font-family: "Centro", 'Arial', sans-serif;
+      font-weight: 700;
+      color: @buttons;
+      padding: 10px 20px;
+      outline: none;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
 
-        &:hover {
-          background-color: @hover;
-          border: 1px solid @hover;
-            a {color: #fff;}
-        }
+      &:hover {
+        background-color: @hover;
+        border: 1px solid @hover;
+        color: #fff;
       }
     }
   }
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
 .slick-arrow {display: none !important;}
 }
 
-/* ----------------------------------- Пресс-центр ----------------------------------- */
 
+/* ----------------------------------- Пресс-центр ----------------------------------- */
 .press {
   margin-bottom: 45px;
 
@@ -406,8 +387,8 @@ li {
       width: 32%;
       margin-bottom: 25px;
 
-      @media only screen and (max-width: 1000px) {width: 48%;}
-      @media only screen and (max-width: 500px) {width: 100%;}
+      @media screen and (max-width: 1000px) {width: 48%;}
+      @media screen and (max-width: 500px) {width: 100%;}
 
       a {
         text-decoration: none;
@@ -420,21 +401,21 @@ li {
   }
 
   &-heading {
+    box-sizing: border-box;
     font-size: 65px;
     line-height: 65px;
     font-family: "Bulletin", 'Arial', sans-serif;
+    font-weight: 400;
     color: @buttons;
-    margin-top: 65px;
     margin-bottom: 35px;
     margin-left: 130px;
 
-    @media only screen and (max-width: 1300px) {margin-left: 0;}
-    @media only screen and (max-width: 1000px) {
+    @media screen and (max-width: 1300px) {margin-left: 0;}
+    @media screen and (max-width: 1000px) {
       font-size: 50px;
       margin-bottom: 20px;
-      margin-top: 0;
     }
-    @media only screen and (max-width: 500px) {
+    @media screen and (max-width: 500px) {
       font-size: 40px;
       margin-bottom: 15px;
     }
@@ -455,10 +436,11 @@ li {
     background-color: @press;
     padding-bottom: 30px;
     padding-top: 25px;
-    transition: 0.3s ease;
+    padding-right: 60px;
+    padding-left: 60px;
+    transition: background-color 0.3s ease;
 
     &-text {
-      width: 240px;
       margin-top: 0;
       text-align: center;
 
@@ -487,58 +469,45 @@ li {
         font-family: "Centro", 'Arial', sans-serif;
         color: #fff;
         background-color: @background;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 11px;
-        padding-left: 11px;
-        transition: 0.3s ease;
+        padding: 5px 11px;
+        transition: border 0.3s ease;
       }
     }
   }
 }
 
-/* ----------------------------------- Форма заявки на странице ----------------------------------- */
 
+/* ----------------------------------- Форма заявки на странице ----------------------------------- */
 .request {
   margin-bottom: 70px;
 
   &-content {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 2px solid @press;
-    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
 
     &-button {
-      width: 276px;
+      display: inline-block;
       font-size: 27px;
       font-family: "Centro", 'Arial', sans-serif;
       font-weight: bold;
       background-color: @buttons;
       text-align: center;
-      margin: 0 auto;
-      margin-top: 50px;
       margin-bottom: 40px;
-      transition: 0.3s ease;
+      text-decoration: none;
+      color: #fff;
+      padding: 20px 30px;
+      transition: background-color 0.3s ease;
+      &:hover {background-color: @hover;}
 
-        @media only screen and (max-width: 500px) {
-          width: 205px;
-          font-size: 19px;
-        }
-
-      a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        text-decoration: none;
-        color: #fff;
-        padding-top: 20px;
-        padding-bottom: 20px;
-        transition: 0.3s ease;
-        &:hover {background-color: @hover;}
-
-        @media only screen and (max-width: 500px) {
-          padding-top: 10px;
-          padding-bottom: 10px;
-        }
+      @media screen and (max-width: 500px) {
+        font-size: 19px;
+        padding-top: 10px;
+        padding-bottom: 10px;
       }
     }
 
@@ -546,13 +515,12 @@ li {
       width: 65%;
       margin: 0 auto;
       text-align: center;
-      margin-bottom: 50px;
     }
   }
 }
 
-/* ----------------------------------- Блок приложений ----------------------------------- */
 
+/* ----------------------------------- Блок приложений ----------------------------------- */
 .apps {
   background-image: url(../images/mobile.jpg);
   background-size: cover;
@@ -560,13 +528,16 @@ li {
 
   &-content {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 40%;
     margin-left: 130px;
     padding-top: 60px;
     padding-bottom: 90px;
 
-    @media only screen and (max-width: 1300px) {margin-left: 0;}
-    @media only screen and (max-width: 1000px) {
+    @media screen and (max-width: 1300px) {margin-left: 0;}
+    @media screen and (max-width: 1000px) {
       width: 80%;
       padding-top: 40px;
       padding-bottom: 50px;
@@ -576,11 +547,12 @@ li {
       font-size: 65px;
       line-height: 58px;
       font-family: "Bulletin", 'Arial', sans-serif;
+      font-weight: 400;
       color: #fff;
       margin-bottom: 25px;
 
-      @media only screen and (max-width: 1000px) {font-size: 40px;}
-      @media only screen and (max-width: 500px) {
+      @media screen and (max-width: 1000px) {font-size: 40px;}
+      @media screen and (max-width: 500px) {
         font-size: 35px;
         line-height: 35px;
       }
@@ -592,33 +564,26 @@ li {
       color: #fff;
       margin-bottom: 40px;
 
-      @media only screen and (max-width: 1000px) {margin-bottom: 80px;}
+      @media screen and (max-width: 1000px) {margin-bottom: 80px;}
     }
 
     &-button {
+      display: inline-block;
       box-sizing: border-box;
-      width: 260px;
       text-align: center;
       margin-bottom: 55px;
-      
-      a {
-        display: block;
-        box-sizing: border-box;
-        height: 100%;
-        font-size: 19px;
-        color: #fff;
-        font-family: "Centro", 'Arial', sans-serif;
-        border: 1px solid #fff;
-        text-decoration: none;
-        padding-bottom: 10px;
-        padding-top: 10px;
-        transition: 0.3s ease;
-        
-        &:hover {
-          border: 1px solid @hover;
-          background-color: @hover;
-        } 
-      }
+      font-size: 19px;
+      color: #fff;
+      font-family: "Centro", 'Arial', sans-serif;
+      border: 1px solid #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: background-color 0.3s ease, border 0.3s ease;
+
+      &:hover {
+        border: 1px solid @hover;
+        background-color: @hover;
+      } 
     }
 
     &-download {
@@ -630,7 +595,7 @@ li {
 
       a + a {
         margin-left: 15px;
-        @media only screen and (max-width: 500px) {
+        @media screen and (max-width: 500px) {
           margin-left: 0;
         }
       }
@@ -638,8 +603,8 @@ li {
   }
 }
 
-/* ----------------------------------- Footer ----------------------------------- */
 
+/* ----------------------------------- Footer ----------------------------------- */
 .footer {
   box-sizing: border-box;
   font-size: 17px;
@@ -672,29 +637,30 @@ li {
     flex-wrap: wrap;
     justify-content: space-between;
     width: 640px;
-    
-    &-colorButtons {
-
-      @media only screen and (max-width: 1000px) {
-        width: 55%;
-        margin-bottom: 50px;
-      }
-    }
-
-    &-colorButtons + &-colorButtons {
-      @media only screen and (max-width: 1000px) {
-        width: 45%;
-      }
-    }
-
-    &-colorFooterText {
-      color: @footerText;
-
-      a {color: @footerText;}
-    }
   }
 
   &-logo {
-    @media only screen and (max-width: 1300px) {display: none;}
+    @media screen and (max-width: 1300px) {display: none;}
   }
 }
+
+.clm {
+
+  &-colorFooterText {
+    color: @footerText;
+
+    a {color: @footerText;}
+  }
+
+  @media screen and (max-width: 1000px) {
+    width: 55%;
+    margin-bottom: 50px;
+  }
+}
+
+.clm + .clm {
+  @media screen and (max-width: 1000px) {
+    width: 45%;
+  }
+} 
+
