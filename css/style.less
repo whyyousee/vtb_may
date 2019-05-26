@@ -134,11 +134,13 @@ li {
       @media screen and (max-width: 1300px) {display: none;}
     }
 
-    &-form a {
+    &-form {
+      box-sizing: border-box;
+      padding: 7px 10px;
       color: @buttons;
-      transition: color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease;
       &:hover {color: @hover;}
-      }
+    }
 
     @media screen and (max-width: 1000px) {display: none;}
     }
@@ -683,14 +685,12 @@ li {
 /* ----------------------------------- Попап ----------------------------------- */
 
 .overlay {
-  position: fixed;
+  position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   top: 0;
   left: 0;
   display: none;
-  overflow: auto;
-  z-index: 20;
 }
 
 .popup {
@@ -703,16 +703,24 @@ li {
   padding: 50px 40px;
   background-color: fadeout(@footer, 5%);
 
+  @media screen and (max-width: 1000px) {width: 80%;}
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    padding: 50px 20px;
+  }
+
   &-heading {
     display: flex;  
     justify-content: space-between; 
     margin-bottom: 30px; 
     margin-left: 50px;
+    @media screen and (max-width: 1000px) {margin-left: 0;}
 
     &-text {
       font-size: 27px;
       color: @buttons;
       font-weight: bold;
+      @media screen and (max-width: 1000px) {font-size:23px;}
     }
 
     &-close {
@@ -731,9 +739,11 @@ li {
 
   &-formData {
     display: flex;  
+    width: 100%;
     flex-direction: column;
     margin-bottom: 25px; 
-    margin-left: 50px;  
+    margin-left: 50px; 
+    @media screen and (max-width: 1000px) {margin-left: 0;} 
 
     textarea {
       box-sizing: border-box;
@@ -743,6 +753,7 @@ li {
       border: 1px solid @background;
       margin-top: 20px; 
       resize: none; 
+      @media screen and (max-width: 1000px) {width: 100%;}
 
       &:focus {
         line-height: 17px;
@@ -761,6 +772,7 @@ li {
       box-sizing: border-box;
       border: 1px solid @background;
       padding: 10px;
+      @media screen and (max-width: 1000px) {width: 100%;}
 
       &:focus {
         font-size: 17px;
@@ -792,16 +804,18 @@ li {
     text-decoration: none;  
     transition: background-color 0.3s ease;
     &:hover {background-color: @hover;}
+    @media screen and (max-width: 1000px) {margin-left: 0;}
   }
 
   &-tel {
     display: flex;
-    margin-bottom: 25px;  
+    margin-bottom: 25px; 
 
     &-icon {
       background-image: url(../images/popup-tel.png);
       background-repeat: no-repeat;
       width: 50px;
+      @media screen and (max-width: 1000px) {display: none;}
     }
 
     a {
@@ -810,6 +824,8 @@ li {
       color: @buttons;
       text-decoration: none;
       cursor: default;
+      @media screen and (max-width: 1000px) {font-size: 40px}
+      @media screen and (max-width: 500px) {font-size: 30px}  
     } 
   }
 
@@ -819,6 +835,11 @@ li {
     color: @buttons;
     transition: color 0.3s ease;
     &:hover {color: @hover;}
+
+    @media screen and (max-width: 1000px) {
+      font-size: 17px;
+      margin-left: 0;
+    }
   }
 }
 
