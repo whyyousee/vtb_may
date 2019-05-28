@@ -726,8 +726,10 @@ li {
     &-close {
       width: 23px;  
       height: 23px; 
-      background-image: url(../images/popup-close.png);
+      background-image: url(../images/popup-close.svg);
       cursor: pointer;
+      transition: background-image 0.3s ease;
+      &:hover {background-image: url(../images/popup-close-hover.svg);}
     }
   }
 
@@ -812,7 +814,7 @@ li {
     margin-bottom: 25px; 
 
     &-icon {
-      background-image: url(../images/popup-tel.png);
+      background-image: url(../images/phone.svg);
       background-repeat: no-repeat;
       width: 50px;
       @media screen and (max-width: 1000px) {display: none;}
