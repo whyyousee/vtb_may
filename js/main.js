@@ -47,5 +47,23 @@ $('.gallery').slick({
   infinite: true
 }); 
 
+$('#phone').mask("+7 999 999-99-99")
 
 });
+
+/*
+
+$('#formValidate').validate({
+	rules: {
+		name: {
+			required: true;
+			minlength: 3;
+		},
+		email: {
+			required: true;
+			email: true;
+		},
+	}
+});
+
+*/
