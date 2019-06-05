@@ -758,7 +758,6 @@ li {
       height: 100px;
       padding: 10px; 
       border: 1px solid @background;
-      margin-top: 20px; 
       margin-bottom: 25px; 
       resize: none; 
       @media screen and (max-width: 1000px) {width: 100%;}
@@ -780,6 +779,7 @@ li {
       box-sizing: border-box;
       border: 1px solid @background;
       padding: 10px;
+      margin-bottom: 20px;
       @media screen and (max-width: 1000px) {width: 100%;}
 
       &:focus {
@@ -792,14 +792,19 @@ li {
       }
     }
 
-    input + input {margin-top: 20px;}
-
     ::placeholder {
       font-size: 17px;
       font-family: "Centro", 'Arial', sans-serif;
       color: @footerText;
       line-height: 17px;
     }
+
+    label {
+      font-size: 12px;
+      line-height: 10px;
+      color: @hover;
+    }
+    
   }
 
   &-button {

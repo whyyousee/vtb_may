@@ -29,23 +29,32 @@ $('.gallery').slick({
   infinite: true
 }); 
 
-$('#phone').mask("+7 999 999-99-99")
-
-});
-
-/*
-
 $('#formValidate').validate({
 	rules: {
 		name: {
-			required: true;
-			minlength: 3;
+			required: true,
+			minlength: 3
 		},
-		email: {
-			required: true;
-			email: true;
+		number: {
+			required: true
+		}
+	},
+	messages: {
+		name: {
+			required: 'Обязательное поле',
+			minlength:  jQuery.validator.format('Минимальная длина имени — {0} символа')
 		},
+		number: {
+			required: 'Обязательное поле'
+		}
+	},
+	submitHandler: function() {
+		alert('Форма отправлена!');
 	}
 });
 
-*/
+$('#phone').mask("+7 999 999-99-99")
+
+
+
+});
