@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
 		<title>Банк Москвы // Private Banking</title>
 		<link rel="stylesheet" href="css/style.css">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 	</head>
 	<body>
 		<div class="fullscreen">
@@ -23,11 +22,11 @@
 					</div>
 					<div class="header-right">
 						<a href="tel:+78003339779" class="header-right-tel">8 800 333-97-79</a>
-						<a href="#" id="popupBtn" class="header-right-form">Стать клиентом</a>
+						<a href="#" class="header-right-form js-openPopupDestkop">Стать клиентом</a>
 					</div>
 					<div class="header-mobile">
 						<div class="header-mobile-mail">
-							<a href="#" id="popupMail"><img src="images/mobile/mail.png" alt=""></a>
+							<a href="#" class="js-openPopupMail"><img src="images/mobile/mail.png" alt=""></a>
 						</div>
 						<div class="header-mobile-menu">
 
@@ -201,34 +200,31 @@
 			</div>
 		</footer>
 
-		<div class="overlay" id="popupContact">
-			<div class="popup">
-				<div class="popup-heading">
-					<div class="popup-heading-text">Получить консультацию</div>
-					<div class="popup-heading-close popupClose" >
-					</div>
-				</div>
-				<div class="popup-flex">
-					<form class="popup-formData" id="formValidate" role="form">
-						<input type="text" placeholder="Ваше имя" name="name">
-						<input type="text" placeholder="Номер телефона" name="number" id="phone">
-						<textarea name="" placeholder="Сообщение"></textarea>
-						<button type="submit" class="popup-button">Направить</button>
-					</form>
-					<div class="popup-tel">
-						<div class="popup-tel-icon"></div>
-						<a href="tel:+78003339779">8-800-333-97-79</a>
-					</div>
-					<a class="popup-offices" href="#">Офисы обслуживания</a>
+		<div class="overlay"></div>
+		<div class="popup">
+			<div class="popup-heading">
+				<div class="popup-heading-text">Получить консультацию</div>
+				<div class="popup-heading-close js-popupClose" >
 				</div>
 			</div>
+			<form class="popup-formData js-validForm" role="form">
+				<input type="text" placeholder="Ваше имя" name="name" required>
+				<input type="text" placeholder="Номер телефона" name="number" id="phone" required>
+				<textarea name="" placeholder="Сообщение"></textarea>
+				<button type="submit" class="popup-button">Направить</button>
+				</form>
+			<div class="popup-tel">
+				<div class="popup-tel-icon"></div>
+				<a href="tel:+78003339779">8-800-333-97-79</a>
+			</div>
+			<a class="popup-offices" href="#">Офисы обслуживания</a>
 		</div>
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/3.9.0/less.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
 		<script src="js/slick.js"></script> 
-		<script src="js/main.js"></script>
 		<script src="js/jquery.maskedinput.min.js"></script> 
-
+		<script src="js/main.js"></script>
 	</body>
 </html>

@@ -48,6 +48,12 @@ body {
   line-height: 25px;
 }
 
+.fixed {
+  position: fixed;
+  width: 100%;
+  overflow-y: scroll !important;
+}
+
 li {
   list-style-type: none;
 }
@@ -696,6 +702,7 @@ li {
   top: 0;
   left: 0;
   display: none;
+  z-index: 100;
 }
 
 .popup {
@@ -705,10 +712,12 @@ li {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 50px 40px;
+  padding: 50px 50px 40px 90px;
   background-color: fadeout(@footer, 5%);
+  display: none;
+  z-index: 150;
 
-  @media screen and (max-width: 1000px) {width: 80%;}
+  @media screen and (max-width: 1000px) {width: 90%;}
   @media screen and (max-width: 500px) {
     width: 100%;
     padding: 50px 20px;
@@ -718,7 +727,6 @@ li {
     display: flex;  
     justify-content: space-between; 
     margin-bottom: 30px; 
-    margin-left: 50px;
     @media screen and (max-width: 1000px) {margin-left: 0;}
 
     &-text {
@@ -738,18 +746,11 @@ li {
     }
   }
 
-  &-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   &-formData {
     display: flex;  
     width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    margin-left: 50px; 
     @media screen and (max-width: 1000px) {margin-left: 0;} 
 
     textarea {
@@ -804,7 +805,6 @@ li {
       line-height: 10px;
       color: @hover;
     }
-    
   }
 
   &-button {
@@ -828,8 +828,10 @@ li {
 
     &-icon {
       background-image: url(../images/phone.svg);
-      background-repeat: no-repeat;
-      width: 50px;
+      position: absolute;
+      width: 26px;
+      height: 43px;
+      left: 46px;
       @media screen and (max-width: 1000px) {display: none;}
     }
 
@@ -845,7 +847,6 @@ li {
   }
 
   &-offices {
-    margin-left: 50px;  
     font-weight: 700;
     color: @buttons;
     transition: color 0.3s ease;
