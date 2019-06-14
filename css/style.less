@@ -147,7 +147,11 @@ li {
       padding: 7px 10px;
       color: @buttons;
       transition: background-color 0.3s ease, color 0.3s ease;
-      &:hover {color: @hover;}
+
+      &:hover {
+        color: @hover;
+        transition: background-color 0.6s ease, color 0.6s ease;
+      }
     }
 
     @media screen and (max-width: 1000px) {display: none;}
@@ -170,7 +174,7 @@ li {
 
     &-menu {
       background-color: @press;
-      background-image: url(../images/mobile/burger.png);
+      background-image: url(../images/burger.png);
       background-position: center;
       background-repeat: no-repeat;
       cursor: pointer;
@@ -703,8 +707,11 @@ li {
   height: 100%;
   top: 0;
   left: 0;
-  display: none;
   z-index: 100;
+  background-color: fadeout(#fff, 60%);
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s ease, transform 0.3s ease;
 }
 
 .popup {
@@ -713,11 +720,13 @@ li {
   box-sizing: border-box;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -55%);
   padding: 50px 50px 40px 90px;
   background-color: fadeout(@footer, 5%);
-  display: none;
-  z-index: 150;
+  z-index: 300;
+  visibility: hidden; 
+  opacity: 0;
+  transition: visibility 0s linear 0.3s, opacity 0.3s ease, transform 0.3s ease;
 
   @media screen and (max-width: 1000px) {width: 90%;}
   @media screen and (max-width: 500px) {
@@ -865,3 +874,10 @@ li {
   }
 }
 
+.open {
+  visibility: visible; 
+  opacity: 1;
+  transition: visibility 0s linear, opacity 0.6s ease, transform 0.6s ease;
+
+  &-popup {transform: translate(-50%, -50%);}
+}

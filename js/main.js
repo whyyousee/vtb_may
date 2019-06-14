@@ -6,33 +6,29 @@ $(document).ready(function () {
 		var self = $(this);
 
 		if ( $('.popup[data-popup="' + self.data('popup') + '"]').length ) {
-			$('.overlay').fadeIn(300);
-			$('.popup[data-popup="' + self.data('popup') + '"]').fadeIn(300);
+			$('.overlay').addClass('open');
+			$('.popup[data-popup="' + self.data('popup') + '"]').addClass('open open-popup');
 			$('.header-right-form').addClass('contactButtonActive');
 			disablePageScroll();
 		}
 	});
 
 	$('.js-popupClose').click(function() { 
-		$('.overlay').fadeOut(300);
-		$('.popup').fadeOut(300);
+		$('.overlay').removeClass('open');
+		$('.popup').removeClass('open open-popup');
 		$('.header-right-form').removeClass('contactButtonActive');
 		enablePageScroll();
 	});
 
-	$('.overlay').click(function() { 
-		$('.overlay').fadeOut(300);
-		$('.popup').fadeOut(300);
-		$('.header-right-form').removeClass('contactButtonActive');
-		enablePageScroll();
-	});
+	$('.gallery').slick({
+	  dots: false,
+	  slidesToShow: 1,
+	  infinite: true
+	}); 
 
-$('.gallery').slick({
-  dots: false,
-  slidesToShow: 1,
-  infinite: true
-}); 
-
+	$.validator.methods.email = function(value, element) {
+        return this.optional(element) || /[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-z]+/.test(value);
+	};
 	$.validator.methods.tel = function(value, element) {
         return this.optional(element) || /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(value);
 	};
@@ -49,7 +45,7 @@ $('.gallery').slick({
 		});
 	});
 
-$('#phone').mask("+7 999 999-99-99")
+	$('input[type="tel"]').inputmask({mask: "+7 (999) 999-9999"});
 
 });
 
